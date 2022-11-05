@@ -15,7 +15,7 @@ const MovieDetails = () => {
     if (!currentMovie) {
         return;
     }
-    
+
     const { title, poster_path, vote_average, tagline, overview, genres } = currentMovie;
     return (
         <div>
@@ -51,28 +51,3 @@ const MovieDetails = () => {
 
 export { MovieDetails };
 
-// title, poster_path, vote_average, tagline, overview, genres
-
-// <StyledLinkBack to={backLinkHref}>Go back</StyledLinkBack>
-    //   <Box>
-    //     <div>
-    //       <Img src={`${movieImg(poster_path)}`} alt="title" />
-    //     </div>
-
-    //     <MovieInfo>
-    //       <MainTitle>{title}</MainTitle>
-    //       <Tagline>{tagline}</Tagline>
-    //       <Score>
-    //         {' '}
-    //         <span>User Score:</span> {`${vote_average.toFixed(1)}`}
-    //       </Score>
-    //       <Genres>Genres</Genres>
-    //       <GenresList>
-    //         {genres.map(({ id, name }) => (
-    //           <li key={id}>- {name}</li>
-    //         ))}
-    //       </GenresList>
-    //       <Overview>Overview</Overview>
-    //       <p>{overview}</p>
-    //     </MovieInfo>
-    //   </Box>
