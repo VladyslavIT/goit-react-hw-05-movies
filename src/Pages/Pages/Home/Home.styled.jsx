@@ -16,8 +16,9 @@ export const TrendList = styled.ul`
 `;
 
 export const TrendItem = styled.li`
+  cursor: pointer;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transform: scale(1.05) rotateX(0deg) translateZ(25px);
+    transform: scale(1.03);
   }
 `;

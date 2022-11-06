@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const FooterWrapper = styled.div`
+export const FooterWrapper = styled.footer`
     
     height: 50px;  
     display: flex;

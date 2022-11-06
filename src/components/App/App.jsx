@@ -15,7 +15,7 @@ import { NotFound } from "Pages/Pages/NotFound/NotFound";
 
  const App = () => {
   return (
-    <Container>
+    // <Container>
     <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -27,7 +27,7 @@ import { NotFound } from "Pages/Pages/NotFound/NotFound";
           <Route path="*" element={<NotFound/>} />
         </Route>
       </Routes>
-    </Container>
+    // </Container>
   );
 };
 

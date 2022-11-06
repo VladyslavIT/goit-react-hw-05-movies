@@ -10,7 +10,7 @@ export const Header = styled.header`
 export const Nav = styled.nav`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 0;
   padding: 0 40px;
 `;
