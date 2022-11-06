@@ -1,6 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
+import { Container } from "./App.styled";
+
 // import { Searchbar } from "../Searchbar/Searchbar";
 import { Layout } from "components/Layout/Layout";
 import { Home } from "../../Pages/Pages/Home/Home";
@@ -13,7 +15,7 @@ import { NotFound } from "Pages/Pages/NotFound/NotFound";
 
  const App = () => {
   return (
-    <div>
+    <Container>
     <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -25,7 +27,7 @@ import { NotFound } from "Pages/Pages/NotFound/NotFound";
           <Route path="*" element={<NotFound/>} />
         </Route>
       </Routes>
-    </div>
+    </Container>
   );
 };
 
