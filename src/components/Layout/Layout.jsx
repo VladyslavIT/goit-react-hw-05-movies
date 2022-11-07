@@ -1,5 +1,10 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import { Container } from 'components/App/App.styled';
+import { Footer } from 'components/Footer/Footer';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
 import {
   Header,
   Nav,
@@ -8,8 +13,6 @@ import {
   GitLink,
   Border,
 } from './Layout.styled';
-import { Container } from 'components/App/App.styled';
-import { Footer } from 'components/Footer/Footer';
 
 const Layout = () => {
     return (
@@ -36,7 +39,8 @@ const Layout = () => {
       </Header>
       <Outlet />
       </Container>
-            <Footer />
+        <Footer />
+        <ToastContainer autoClose={2000} />
             </>
   );
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { SearchMovie } from 'components/SearchMovie/SearchMovie';
 import { fetchMovies } from 'Api/Api';
+import { toast } from 'react-toastify';
 
 import { Form, Input, Button } from './Searchbar.styled';
 
@@ -17,10 +18,17 @@ const Searchbar = ({ onSubmit }) => {
   const handleSubmit = event => {
     event.preventDefault();
     if (query === '') {
+      toast.error('Please enter a movie title');
       return;
     }
 
-    fetchMovies(query).then(response => setMovies(response));
+    fetchMovies(query).then(response => {
+      if (response.length === 0) {
+        toast.error('Please enter another movie title');
+        return;
+      }
+      setMovies(response);
+    });
   };
 
   return (

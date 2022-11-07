@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink, Outlet } from "react-router-dom";
 
+import { SearchTitle,SearchList, SearchItem  } from './SearchMovie.styled';
+
 
 const SearchMovie = ({ movies }) => {
 
@@ -8,12 +10,12 @@ const SearchMovie = ({ movies }) => {
 
   return (
     <>
-      <h2>Search Film</h2>
-      <ul>
+      <SearchTitle>Movies found</SearchTitle>
+      <SearchList>
         {movies.map(({id, original_title, poster_path}) => (
-          <li key={id}><NavLink key={id} to={`${id}`}><img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={`${original_title}`} /></NavLink></li>
+          <SearchItem key={id}><NavLink key={id} to={`${id}`}><img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={`${original_title}`} /></NavLink></SearchItem>
         ))}
-      </ul>
+      </SearchList>
           <Outlet/>
     </>
   );
