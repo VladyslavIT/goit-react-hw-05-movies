@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   padding-top: 40px;
-  margin-bottom: 64px;
+  margin-bottom: 56px;
 `;
 export const InfoWrapper = styled.div`
   margin-left: 76px;
@@ -94,3 +94,5 @@ export const MoreLink = styled(NavLink)`
     color: white;
   }
 `;
+
+

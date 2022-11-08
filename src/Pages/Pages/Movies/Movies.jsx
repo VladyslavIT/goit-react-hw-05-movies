@@ -1,9 +1,11 @@
-import { Searchbar } from "components/Searchbar/Searchbar";
+import { Searchbar } from 'components/Searchbar/Searchbar';
+
 const Movies = () => {
-    return (
-        <div>
-            <Searchbar/>
-        </div>
-    )
-}
-export { Movies };
+  return (
+    <>
+      <Searchbar />
+    </>
+  );
+};
+
+export default Movies;

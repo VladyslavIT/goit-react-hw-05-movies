@@ -27,3 +27,16 @@ ul {
   margin: 0;
   padding: 0;
 }
+.icon {
+  width: 2em;
+  height: 2em;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+.icon:hover {
+  transform: background-color;
+  background-color: cadetblue;
+}
+.icon-git {
+  margin-right: 4px;
+}

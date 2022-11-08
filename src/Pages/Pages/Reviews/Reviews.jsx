@@ -1,10 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchReview } from 'Api/Api';
 
+import { Loader } from '../../../components/Loader/Loader';
 import {
-    ReviewThumb,
+  ReviewThumb,
   ReviewTitle,
   ReviewText,
   NotReview,
@@ -13,10 +15,15 @@ import {
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(false);
   const { movieId } = useParams();
 
   useEffect(() => {
-    fetchReview(movieId).then(response => setReviews(response));
+    setLoading(true);
+    fetchReview(movieId).then(response => {
+      setReviews(response);
+      setLoading(false);
+    });
   }, [movieId]);
 
   if (!reviews) {
@@ -25,6 +32,7 @@ const Reviews = () => {
 
   return (
     <>
+      {loading && <Loader />}
       {reviews.length > 0 ? (
         <ReviewThumb>
           {reviews.map(({ author, content, created_at, id }) => (
@@ -44,4 +52,8 @@ const Reviews = () => {
   );
 };
 
-export { Reviews };
+Reviews.propTypes = {
+  movieId: PropTypes.string.isRequired
+};
+
+export default Reviews;

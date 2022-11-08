@@ -1,8 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
-import { NavLink, Outlet, useParams } from 'react-router-dom';
+import { NavLink, Outlet, useParams, useLocation } from 'react-router-dom';
 import { fetchByID } from 'Api/Api';
+import { GrClose } from 'react-icons/gr';
 
+import { Loader } from '../../../components/Loader/Loader';
 import {
   Wrapper,
   InfoThumb,
@@ -22,21 +25,27 @@ import {
 
 const MovieDetails = () => {
   const [currentMovie, setCurrentMovie] = useState(null);
+  const [loading, setLoading] = useState(false);
   const { movieId } = useParams();
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
-    fetchByID(movieId).then(response => setCurrentMovie(response));
+    setLoading(true);
+    fetchByID(movieId).then(response => {
+      setCurrentMovie(response);
+      setLoading(false);
+    });
   }, [movieId]);
 
   if (!currentMovie) {
     return;
   }
-
   const { title, poster_path, vote_average, tagline, overview, genres } =
     currentMovie;
   return (
     <>
-      {' '}
+      {loading && <Loader />}{' '}
       <Wrapper>
         {currentMovie && (
           <>
@@ -64,7 +73,9 @@ const MovieDetails = () => {
               <OwerviewTitle>Overwiew</OwerviewTitle>
               <OwerviewText>{overview}</OwerviewText>
             </InfoThumb>
-            <NavLink to='/'>BACK</NavLink>
+            <NavLink to={backLinkHref}>
+              <GrClose className="icon" />
+            </NavLink>
           </>
         )}
       </Wrapper>
@@ -78,4 +89,8 @@ const MovieDetails = () => {
   );
 };
 
-export { MovieDetails };
+MovieDetails.propTypes = {
+  movieId: PropTypes.string.isRequired
+};
+
+export default MovieDetails;

@@ -1,21 +1,16 @@
-import React from "react";
+import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import { Container } from "./App.styled";
-
-// import { Searchbar } from "../Searchbar/Searchbar";
-import { Layout } from "components/Layout/Layout";
-import { Home } from "../../Pages/Pages/Home/Home";
-import { Movies } from "Pages/Pages/Movies/Movies";
-import { MovieDetails } from "Pages/Pages/MovieDetails/MovieDetails";
-import { Cast } from "Pages/Pages/Cast/Cast";
-import { Reviews } from "Pages/Pages/Reviews/Reviews";
-import { NotFound } from "Pages/Pages/NotFound/NotFound";
-
+const Layout = lazy(() => import('../Layout/Layout'));
+const Home = lazy(() => import('../../Pages/Pages/Home/Home'));
+const Movies = lazy(() => import('../../Pages/Pages/Movies/Movies'));
+const MovieDetails = lazy(() => import('../../Pages/Pages/MovieDetails/MovieDetails'));
+const Cast = lazy(() => import('../../Pages/Pages/Cast/Cast'));
+const Reviews = lazy(() => import('../../Pages/Pages/Reviews/Reviews'));
+const NotFound = lazy(() => import('../../Pages/Pages/NotFound/NotFound'));
 
  const App = () => {
   return (
-    // <Container>
     <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -27,7 +22,6 @@ import { NotFound } from "Pages/Pages/NotFound/NotFound";
           <Route path="*" element={<NotFound/>} />
         </Route>
       </Routes>
-    // </Container>
   );
 };
 

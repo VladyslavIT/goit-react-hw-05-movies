@@ -24,7 +24,7 @@ export const StyledLinkHead = styled(NavLink)`
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   :hover,
   :focus {
-     transform: color;
+    transform: color;
     color: white;
   }
   & + & {
@@ -36,12 +36,19 @@ export const StyledLinkHead = styled(NavLink)`
 `;
 
 export const SelfThumb = styled.div`
-display: flex;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 `;
 
 export const GitLink = styled.a`
-text-decoration: none;
+  text-decoration: none;
   color: inherit;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: color;
+    color: cadetblue;
+  }
 `;
 export const Border = styled.div`
   margin: 0 8px;

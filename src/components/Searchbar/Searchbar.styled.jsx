@@ -19,15 +19,15 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-cursor: pointer;
-    border-radius: 8px;
-    border: none;
-    margin-left: 12px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    &:hover {
-      transform: background-color;
-        background-color: cadetblue;
-        color: white;
-         
-    }
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  margin-left: 12px;
+  color: white;
+  background-color: cadetblue;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: background-color;
+    color: greenyellow;
+  }
 `;
