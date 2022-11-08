@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCast } from 'Api/Api';
-import notFound from '../../../notFound.png';
+import notFound from '../../notFound.png';
 
 import { CastList, CastRole, NotCast } from './Cast.styled';
-import { Loader } from '../../../components/Loader/Loader';
+import { Loader } from '../../components/Loader/Loader';
 
 const Cast = () => {
   const [movieCast, setMovieCast] = useState([]);

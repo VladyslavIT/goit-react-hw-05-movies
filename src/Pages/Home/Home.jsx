@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 
 import { fetchTrends } from 'Api/Api';
-import { Loader } from '../../../components/Loader/Loader';
+import { Loader } from '../../components/Loader/Loader';
 import { Title, TrendList, TrendItem } from './Home.styled';
 
 const Home = () => {

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchReview } from 'Api/Api';
 
-import { Loader } from '../../../components/Loader/Loader';
+import { Loader } from '../../components/Loader/Loader';
 import {
   ReviewThumb,
   ReviewTitle,

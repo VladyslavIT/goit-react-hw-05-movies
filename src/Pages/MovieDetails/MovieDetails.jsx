@@ -5,7 +5,7 @@ import { NavLink, Outlet, useParams, useLocation } from 'react-router-dom';
 import { fetchByID } from 'Api/Api';
 import { GrClose } from 'react-icons/gr';
 
-import { Loader } from '../../../components/Loader/Loader';
+import { Loader } from '../../components/Loader/Loader';
 import {
   Wrapper,
   InfoThumb,
