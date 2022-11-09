@@ -21,20 +21,22 @@ const Searchbar = () => {
     }
   }, [filterParams]);
 
-  useEffect(() => {
-    if (filterParams) {
-      setLoading(true);
-      fetchMovies(filterParams).then(response => {
-        if (response.length === 0) {
-          toast.error('Please enter another movie title');
-          setLoading(false);
-          return;
-        }
-        setMovies(response);
-        setLoading(false);
-      });
-    }
-  }, [filterParams]);
+
+// Делает запрос, когда пользователь переш по ссылке на фильм
+  // useEffect(() => {
+  //   if (filterParams) {
+  //     setLoading(true);
+  //     fetchMovies(filterParams).then(response => {
+  //       if (response.length === 0) {
+  //         toast.error('Please enter another movie title');
+  //         setLoading(false);
+  //         return;
+  //       }
+  //       setMovies(response);
+  //       setLoading(false);
+  //     });
+  //   }
+  // }, []);
 
   const handleQueryChange = event => {
     const { value } = event.currentTarget;
