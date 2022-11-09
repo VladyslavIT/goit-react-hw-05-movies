@@ -34,7 +34,7 @@ const Searchbar = () => {
         setLoading(false);
       });
     }
-  }, []);
+  }, [filterParams]);
 
   const handleQueryChange = event => {
     const { value } = event.currentTarget;
