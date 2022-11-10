@@ -1,4 +1,5 @@
 import React from 'react';
+import { Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import { NavLink, Outlet, useParams, useLocation } from 'react-router-dom';
@@ -81,16 +82,22 @@ const MovieDetails = () => {
       </Wrapper>
       <MoreWrapper>
         <MoreTitle>Show more information</MoreTitle>
-        <MoreLink to="cast">Cast</MoreLink>
-        <MoreLink to="reviews">Reviews</MoreLink>
+        <MoreLink to="cast" state={{ from: backLinkHref }}>
+          Cast
+        </MoreLink>
+        <MoreLink to="reviews" state={{ from: backLinkHref }}>
+          Reviews
+        </MoreLink>
       </MoreWrapper>
-      <Outlet />
+      <Suspense>
+        <Outlet />
+        </Suspense>
     </>
   );
 };
 
 MovieDetails.propTypes = {
-  movieId: PropTypes.string.isRequired
+  movieId: PropTypes.string.isRequired,
 };
 
 export default MovieDetails;

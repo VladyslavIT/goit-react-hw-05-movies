@@ -21,9 +21,6 @@ const Searchbar = () => {
     }
   }, [filterParams]);
 
-
-// После поиска фильма и открытие деталей фильма, нажать кнопку назад, фильмы оставались
-// работает когда нет зависимости, без нее не деплоится
   useEffect(() => {
     if (filterParams) {
       setLoading(true);
@@ -38,23 +35,6 @@ const Searchbar = () => {
       });
     }
   }, [filterParams]);
-
-  // так не работает
-  // const showMovieSearch = filterParams => {
-  //   if (filterParams) {
-  //     setLoading(true);
-  //     fetchMovies(filterParams).then(response => {
-  //       if (response.length === 0) {
-  //         toast.error('Please enter another movie title');
-  //         setLoading(false);
-  //         return;
-  //       }
-  //       setMovies(response);
-  //       setLoading(false);
-  //     });
-  //   }
-  // };
-  // showMovieSearch();
 
   const handleQueryChange = event => {
     const { value } = event.currentTarget;
